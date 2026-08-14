@@ -1,0 +1,102 @@
+@use '../utilities/variables' as v;
+@use '../utilities/mixins' as m;
+
+.main-club {
+  margin-top: 100px;
+  max-width: 100%;
+  padding: 1.5rem;
+
+  p {
+    color: v.$color-texto;
+    margin-bottom: 20px;
+  }
+
+  @include m.mobile {
+    margin-top: 80px;
+    padding: 15px;
+  }
+
+  @include m.tablet {
+    margin-top: 90px;
+  }
+}
+
+.guarida-seccion {
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  gap: 40px;
+  align-items: start;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 30px;
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin: 30px auto;
+    padding: 0 10px;
+  }
+
+  @include m.tablet {
+    grid-template-columns: 1fr 320px;
+    gap: 25px;
+    padding: 0 20px;
+  }
+}
+
+.columna-imagen-club {
+  width: 100%;
+  max-width: 450px;
+
+  @include m.mobile {
+    max-width: 100%;
+  }
+}
+
+.wrapper-imagen-club img {
+  width: 100%;
+  height: auto;
+  border-radius: v.$border-radius-main;
+  display: block;
+}
+
+.btn-club {
+  background-color: v.$color-primario;
+  color: v.$color-blanco;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  @extend %flex-center;
+  box-shadow: v.$shadow-btn;
+  transition: all 0.1s ease-in-out;
+
+  &:active {
+    box-shadow: inset 0 5px 6px rgba(0, 0, 0, 0.26);
+    transform: scale(0.98);
+  }
+
+  @include m.mobile {
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.btn-patreon {
+  background-color: v.$color-primario;
+  color: v.$color-blanco;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  @extend %flex-center;
+  box-shadow: 0 5px 6px rgba(107, 107, 107, 0.26);
+  transition: all 0.1s ease-in-out;
+
+  @include m.mobile {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}

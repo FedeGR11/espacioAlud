@@ -1,0 +1,17 @@
+@use '../utilities/variables' as v;
+@use '../utilities/mixins' as m;
+
+footer {
+  @include m.flex(column, flex-start, center, 15px);
+  width: 100%;
+  padding: 30px 20px;
+  background-color: v.$bg-header-footer;
+
+  .footer-logo {
+    @include m.flex(row, flex-start, center, 10px);
+  }
+
+  .footer-copyright {
+    margin: 0;
+  }
+}

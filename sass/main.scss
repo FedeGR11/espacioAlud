@@ -1,0 +1,17 @@
+// sass --watch sass/main.scss styles/style.css
+
+// 1. Utilities (Variables, Mixins y Reset)
+@use 'utilities/variables';
+@use 'utilities/mixins';
+@use 'utilities/reset';
+
+// 2. Components
+@use 'components/header';
+@use 'components/footer';
+
+// 3. Pages
+@use 'pages/index';
+@use 'pages/club';
+@use 'pages/contacto';
+@use 'pages/crochet';
+@use 'pages/sobremi';

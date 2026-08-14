@@ -1,0 +1,134 @@
+@use '../utilities/variables' as v;
+@use '../utilities/mixins' as m;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: v.$color-blanco; 
+  z-index: 1000;
+  box-shadow: 0 2px 10px #0000000d;
+
+  .header-contenido {
+    position: relative;
+    @include m.flex(row, space-between, center);
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 20px;
+
+    @include m.mobile {
+      padding: 10px 15px;
+    }
+
+    @include m.tablet {
+      padding: 12px 25px;
+    }
+  }
+}
+
+.brand,
+.logo-link {
+  @include m.flex(row, flex-start, center, 12px);
+}
+
+.logo-img {
+  width: 35px;
+  height: auto;
+  display: block;
+}
+
+.logo-nombre {
+  font-size: 2rem;
+  font-weight: normal;
+
+  @include m.mobile {
+    font-size: 1.5rem;
+  }
+
+  @include m.tablet {
+    font-size: 1.7rem;
+  }
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  @include m.flex(row, flex-start, center, 1.5rem);
+  font-size: 1.1rem;
+}
+
+// Ocultar menu en escritorio
+.menu-toggle,
+.btn-header {
+  display: none;
+}
+
+// Celulares y Tablets
+@include m.tablet-down {
+  .btn-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+
+    span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: v.$color-primario;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 0;
+    width: 100%;
+    background-color: v.$color-blanco;
+    padding: 20px 0px;
+    box-shadow: 0 10px 15px #0000001a;
+    
+    // Oculto por defecto
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+    text-align: center;
+  }
+
+  // Mostrar menú desplegable al activar el checkbox
+  .menu-toggle:checked ~ .nav-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  // Animación a la "X" del botón hamburguesa
+  .menu-toggle:checked ~ .btn-header {
+    span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+  }
+}

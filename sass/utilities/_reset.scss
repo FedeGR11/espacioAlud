@@ -1,0 +1,61 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: v.$font-principal;
+}
+
+body {
+  min-height: 100vh;
+  @include m.flex(column);
+
+  @include m.mobile {
+    overflow-x: hidden;
+  }
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+  color: v.$color-negro;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: v.$color-accent;
+  }
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: v.$color-accent;
+  font-size: 2.5rem;
+  font-weight: normal;
+
+  @include m.mobile {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+}
+
+h3 {
+  margin-bottom: 20px;
+  color: v.$color-primario;
+}
+
+h6, p {
+  color: v.$color-texto;
+}
+
+input[type=number] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

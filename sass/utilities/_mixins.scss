@@ -1,0 +1,43 @@
+// 1. Mixin para Flexbox
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// 2. Mixins para Media Queries
+@mixin mobile {
+  @media screen and (min-width: 300px) and (max-width: 567px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 568px) and (max-width: 967px) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media screen and (max-width: 967px) {
+    @content;
+  }
+}
+
+// 3. Mixin para Tarjetas de Información
+@mixin tarjeta-box {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+// 4. Placeholder
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
