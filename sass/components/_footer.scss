@@ -10,7 +10,7 @@ footer {
   .footer-logo {
     @include m.flex(row, flex-start, center, 10px);
   }
-
+  
   .footer-copyright {
     margin: 0;
   }
