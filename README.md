@@ -29,12 +29,9 @@ Espacio ALUD es un refugio creativo en Montevideo enfocado en la comunidad y el 
 Si deseas modificar los estilos en la carpeta `sass/`, ejecuta en la terminal:
 ```bash
 npx sass --watch sass/main.scss styles/style.css
+```
 
-Autor
-Desarrollo Web: Federico García
-
-Diseño & Contenido: Federico García
-
+---
 
 ## Capturas del Proyecto 📸
 
@@ -52,3 +49,9 @@ Diseño & Contenido: Federico García
 
 ### Contacto
 ![Contacto](assets/capturas/contacto.png)
+
+
+Autor
+Desarrollo Web: Federico García
+
+Diseño & Contenido: Federico García
