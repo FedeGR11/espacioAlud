@@ -35,27 +35,54 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  align-items: start;
+  align-items: center;
   margin-top: 30px;
-  grid-template-areas: 
+
+  grid-template-areas:
+    "titulo   titulo"
     "texto1   aguja"
     "texto2   aguja"
     "amigrumi texto3"
     "amigrumi texto4";
 
-  .crochet-texto1 { grid-area: texto1; }
-  .crochet-texto2 { grid-area: texto2; font-size: 1.1rem; }
-  .img-aguja       { grid-area: aguja; }
-  .img-amigrumi    { grid-area: amigrumi; }
-  .crochet-texto3 { grid-area: texto3; }
-  .crochet-texto4 { grid-area: texto4; font-size: 1.1rem; }
+  h1 {
+    grid-area: titulo;
+    width: 100%;
+  }
+
+  .crochet-texto1 {
+    grid-area: texto1;
+  }
+
+  .crochet-texto2 {
+    grid-area: texto2;
+    font-size: 1.1rem;
+  }
+
+  .img-aguja {
+    grid-area: aguja;
+  }
+
+  .img-amigrumi {
+    grid-area: amigrumi;
+  }
+
+  .crochet-texto3 {
+    grid-area: texto3;
+  }
+
+  .crochet-texto4 {
+    grid-area: texto4;
+    font-size: 1.1rem;
+  }
 
   @include m.mobile {
     grid-template-columns: 1fr;
     gap: 25px;
     margin: 30px auto;
     padding: 0 10px;
-    grid-template-areas: 
+    grid-template-areas:
+      "titulo"
       "texto1"
       "texto2"
       "aguja"

@@ -32,16 +32,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  align-items: start;
+  align-items: center;
   margin-top: 30px;
   grid-template-areas: 
+    "titulo titulo"
     "texto1 silla"
     "lu     texto2";
+
+  h1{
+    grid-area: titulo;
+    width: 100%;
+  }
 
   .index-texto1 { grid-area: texto1; }
   .img-silla    { grid-area: silla; }
   .img-lu       { grid-area: lu; }
   .index-texto2 { grid-area: texto2; }
+
 
   @include m.mobile {
     grid-template-columns: 1fr;
@@ -49,9 +56,15 @@
     margin: 30px auto;
     padding: 0 10px;
     grid-template-areas: 
+      "titulo"
       "texto1"
       "silla"
       "texto2"
       "lu";
+
+      .index-texto1,
+    .index-texto2 {
+      height: auto;
+    }
   }
 }

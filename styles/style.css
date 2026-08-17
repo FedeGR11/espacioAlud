@@ -51,7 +51,7 @@ h1 {
   }
 }
 
-h3 {
+h2 {
   margin-bottom: 20px;
   color: #456657;
 }
@@ -256,9 +256,13 @@ footer .footer-copyright {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  align-items: start;
+  align-items: center;
   margin-top: 30px;
-  grid-template-areas: "texto1 silla" "lu     texto2";
+  grid-template-areas: "titulo titulo" "texto1 silla" "lu     texto2";
+}
+.index-seccion h1 {
+  grid-area: titulo;
+  width: 100%;
 }
 .index-seccion .index-texto1 {
   grid-area: texto1;
@@ -278,7 +282,11 @@ footer .footer-copyright {
     gap: 25px;
     margin: 30px auto;
     padding: 0 10px;
-    grid-template-areas: "texto1" "silla" "texto2" "lu";
+    grid-template-areas: "titulo" "texto1" "silla" "texto2" "lu";
+  }
+  .index-seccion .index-texto1,
+  .index-seccion .index-texto2 {
+    height: auto;
   }
 }
 
@@ -583,9 +591,13 @@ footer .footer-copyright {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  align-items: start;
+  align-items: center;
   margin-top: 30px;
-  grid-template-areas: "texto1   aguja" "texto2   aguja" "amigrumi texto3" "amigrumi texto4";
+  grid-template-areas: "titulo   titulo" "texto1   aguja" "texto2   aguja" "amigrumi texto3" "amigrumi texto4";
+}
+.circulo-crochet h1 {
+  grid-area: titulo;
+  width: 100%;
 }
 .circulo-crochet .crochet-texto1 {
   grid-area: texto1;
@@ -613,7 +625,7 @@ footer .footer-copyright {
     gap: 25px;
     margin: 30px auto;
     padding: 0 10px;
-    grid-template-areas: "texto1" "texto2" "aguja" "texto3" "amigrumi" "texto4";
+    grid-template-areas: "titulo" "texto1" "texto2" "aguja" "texto3" "amigrumi" "texto4";
   }
 }
 
